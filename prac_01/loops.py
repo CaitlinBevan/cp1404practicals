@@ -1,0 +1,29 @@
+"""
+CP1404/CP5632 - Practical
+Loops
+"""
+for i in range(1, 21, 2):
+    print(i, end=' ')
+print()
+
+
+for i in range(0, 101, 10):
+    print(i, end=' ')
+print()
+
+for i in range(20, 0, -1):
+    print(i, end=' ')
+print()
+
+
+number_of_stars = int(input("How many stars: "))
+
+for i in range(number_of_stars):
+    print("*", end=' ')
+print()
+
+for i in range(number_of_stars):
+    for j in range(i + 1):
+        print("*", end=' ')
+    print()
+
