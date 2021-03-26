@@ -33,7 +33,7 @@ def get_data():
 def display_subject(data):
     """Display subject data."""
     for subject_data in data:
-        print(f"{subject_data[0]} is taught by {subject_data[1]:<12s}  and has  {subject_data[2]:3.0f} students")
+        print(f"{subject_data[0]} is taught by {subject_data[1]:<12s} and has {subject_data[2]:3.0f} students")
 
 
 main()
