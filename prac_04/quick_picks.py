@@ -7,12 +7,12 @@ MAXIMUM_NUMBER = 45
 TOTAL_NUMBERS = 6
 
 total_quick_picks = int(input("How many quick picks? "))
-quick_picks = []
 for i in range(total_quick_picks):
+    quick_picks = []
     for j in range(TOTAL_NUMBERS):
-        result = random.randint(MINIMUM_NUMBER, MAXIMUM_NUMBER)
-        quick_picks.append(result)
-        quick_picks.sort()
-        print(f"{result:2.0f}", end=" ")
-    print()
-# TODO: sort results
+        random_quick_pick = random.randint(MINIMUM_NUMBER, MAXIMUM_NUMBER)
+        while random_quick_pick in quick_picks:
+            random_quick_pick = random.randint(MINIMUM_NUMBER, MAXIMUM_NUMBER)
+        quick_picks.append(random_quick_pick)
+    quick_picks.sort()
+    print("".join("{:2}".format(quick_pick) for quick_pick in quick_picks))
