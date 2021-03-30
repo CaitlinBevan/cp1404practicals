@@ -16,3 +16,6 @@ while state_code != "":
     else:
         print("Invalid short state")
     state_code = input("Enter short state: ")
+
+for state_code, australian_state in CODE_TO_NAME.items():
+    print(f"{state_code:3s} is {australian_state}")
