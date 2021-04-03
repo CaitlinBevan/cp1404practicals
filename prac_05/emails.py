@@ -5,6 +5,7 @@ Emails
 
 
 def main():
+    """Program to store users' emails and names in a dictionary."""
     emails_dict = {}
     email = input("Email: ")
     while email != "":
@@ -20,6 +21,7 @@ def main():
 
 
 def get_name(email):
+    """Get users' name from their email address."""
     split_email = email.split("@")[0]
     further_split = split_email.split(".")
     name = " ".join(further_split).title()
@@ -27,4 +29,3 @@ def get_name(email):
 
 
 main()
-
