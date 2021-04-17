@@ -1,4 +1,4 @@
-"""CP1404/CP5632 Practical - Programming Language."""
+"""CP1404/CP5632 Practical - Programming Language Class."""
 
 
 class ProgrammingLanguage:
@@ -16,3 +16,6 @@ class ProgrammingLanguage:
         if self.typing == "dynamic":
             return True
 
+    def __str__(self):
+        return "{self.name}, {self.typing} Typing, Reflection={self.reflection}, First appeared in {self.year}"\
+            .format(self=self)
