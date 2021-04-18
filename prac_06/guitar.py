@@ -13,8 +13,8 @@ class Guitar:
         self.cost = cost
 
     def __str__(self):
-        """Return string formatting."""
-        return "{self.name} ({self.year}) : ${self.cost}".format(self=self)
+        """Return string formatting for Guitar instance."""
+        return f"{self.name} ({self.year}) : ${self.cost:,.2f}"
 
     def get_age(self):
         """Return age of Guitar."""
