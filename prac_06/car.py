@@ -32,4 +32,5 @@ class Car:
         return distance
 
     def __str__(self):
+        """Return string formatting for Car instance."""
         return "{self.name}, fuel={self.fuel}, odometer={self.odometer}".format(self=self)
