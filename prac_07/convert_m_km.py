@@ -1,14 +1,14 @@
 """
 CP1404 Practical
-Kivy GUI program to convert m to km
+Kivy GUI program to convert miles to kilometers
 """
 
 from kivy.app import App
 from kivy.lang import Builder
 
 
-class ConvertMtoKm(App):
-    """ConvertMtoKm is a Kivy App for to convert miles to kilometres."""
+class MilesToKilometres(App):
+    """MilesToKilometres is a Kivy App for to convert miles to kilometres."""
     def build(self):
         """Build the Kivy app from the kv file."""
         self.title = "Convert Miles to Kilometres"
@@ -20,5 +20,11 @@ class ConvertMtoKm(App):
         result = value * 1.60934
         self.root.ids.output_label.text = str(result)
 
+    def handle_increment(self, increment):
+        """Handle button press to increase by one or decrease by one."""
+        result = 3 + increment
+        self.root.ids.input_number.text = str(result)
+        self.handle_calculate(result)
 
-ConvertMtoKm().run()
+
+MilesToKilometres().run()
