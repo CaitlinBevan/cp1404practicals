@@ -27,9 +27,10 @@ class MilesToKilometres(App):
         """Handle button press to increase by one or decrease by one."""
         result = self.get_valid_input() + increment
         self.root.ids.input_number.text = str(result)
-        self.get_valid_input()
+        self.handle_calculate()
 
     def get_valid_input(self):
+        """Handle invalid input and return 0 if invalid number entered."""
         try:
             result = int(self.root.ids.input_number.text)
             return result
