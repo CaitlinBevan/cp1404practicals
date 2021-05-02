@@ -16,7 +16,7 @@ class BoxLayoutDemo(App):
         return self.root
 
     def handle_greet(self):
-        """Handle output greeting using text inputted."""
+        """Handle output greeting using inputted text."""
         print("greet")
         print("test")
         self.root.ids.output_label.text = "Hello " + self.root.ids.input_name.text

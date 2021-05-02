@@ -5,7 +5,7 @@ Kivy GUI program for dynamic labels
 
 from kivy.app import App
 from kivy.lang import Builder
-from kivy.uix.button import Button
+from kivy.uix.label import Label
 
 
 class DynamicLabelsApp(App):
@@ -26,7 +26,7 @@ class DynamicLabelsApp(App):
     def create_labels(self):
         """Create labels from dictionary entries."""
         for name in self.name_to_phone:
-            temp_label = Button(text=name)
+            temp_label = Label(text=name)
             temp_label.bind()
             self.root.ids.main.add_widget(temp_label)
 
