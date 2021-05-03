@@ -26,9 +26,9 @@ class DynamicLabelsApp(App):
     def create_labels(self):
         """Create labels from dictionary entries."""
         for name in self.name_to_phone:
-            temp_label = Label(text=name)
-            temp_label.bind()
-            self.root.ids.main.add_widget(temp_label)
+            label = Label(text=name)
+            label.bind()
+            self.root.ids.main.add_widget(label)
 
 
 DynamicLabelsApp().run()
