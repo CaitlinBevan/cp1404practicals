@@ -1,5 +1,5 @@
 """CP1404/CP5632 Practical
-Used Car"""
+Taxi Test"""
 
 from prac_08.taxi import Taxi
 
