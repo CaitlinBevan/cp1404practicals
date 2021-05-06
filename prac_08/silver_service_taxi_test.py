@@ -9,7 +9,7 @@ def main():
     new_taxi = SilverServiceTaxi("Fancy Taxi", 100, 2)
     new_taxi.drive(18)
     print(new_taxi)
-    print("Silver Service Taxi Fare is: ", new_taxi.get_fare())
+    print(f"Silver Service Taxi Fare is: {new_taxi.get_fare():.2f}")
 
 
 main()
