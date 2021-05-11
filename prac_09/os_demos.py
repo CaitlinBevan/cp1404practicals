@@ -8,13 +8,13 @@ import os
 
 def main():
     """Demo os module functions."""
-    print("Starting directory is: {}".format(os.getcwd()))
+    print(f"Starting directory is: {os.getcwd()}")
 
     # Change to desired directory
     os.chdir('Lyrics/Christmas')
 
     # Print a list of all files in current directory
-    print("Files in {}:\n{}\n".format(os.getcwd(), os.listdir('.')))
+    print(f"Files in {os.getcwd()}:\n{os.listdir('.')}\n")
 
     # Make a new directory
     # The next time you run this, it will crash if the directory exists
@@ -31,10 +31,10 @@ def main():
             continue
 
         new_name = get_fixed_filename(filename)
-        print("Renaming {} to {}".format(filename, new_name))
+        print(f"Renaming {filename} to {new_name}")
 
         # Option 1: rename file to new name - in place
-        os.rename(filename, new_name)
+        # os.rename(filename, new_name)
 
         # Option 2: move file to new place, with new name
         shutil.move(filename, 'temp/' + new_name)
@@ -47,19 +47,19 @@ def get_fixed_filename(filename):
 
 
 def demo_walk():
-    """Process all subdirectories using os.walk()."""
+    """Process all subdirectories using os.walk() and rename files."""
     os.chdir('Lyrics')
     for directory_name, subdirectories, filenames in os.walk('.'):
         print("Directory:", directory_name)
         print("\tcontains subdirectories:", subdirectories)
         print("\tand files:", filenames)
-        print("(Current working directory is: {})".format(os.getcwd()))
+        print(f"(Current working directory is: {os.getcwd()})")
 
         for filename in filenames:
-            new_name = get_fixed_filename(filename)
-            print("Renaming {} to {}".format(filename, new_name))
-
-            os.rename(filename, new_name)
+            starting_name = os.path.join(directory_name, filename)
+            new_name = os.path.join(directory_name, get_fixed_filename(filename))
+            print(f"Renaming {starting_name} to {new_name}")
+            os.rename(starting_name, new_name)
 
 
 # main()
