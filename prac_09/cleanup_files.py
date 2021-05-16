@@ -6,37 +6,32 @@ import os
 
 
 def main():
-    """Demo os module functions."""
-    print(f"Starting directory is: {os.getcwd()}")
+    """Program to rename files in Lyrics directory."""
+    os.chdir('Lyrics')
+    for directory_name, subdirectories, filenames in os.walk('.'):
+        print("Directory:", directory_name)
+        print("\tcontains subdirectories:", subdirectories)
+        print("\tand files:", filenames)
+        print(f"(Current working directory is: {os.getcwd()})")
 
-    # Change to desired directory
-    os.chdir('Lyrics/Christmas')
-
-    # Print a list of all files in current directory
-    print(f"Files in {os.getcwd()}:\n{os.listdir('.')}\n")
-
-    # Make a new directory
-    # The next time you run this, it will crash if the directory exists
-
-    try:
-        os.mkdir('temp')
-    except FileExistsError:
-        pass
-
-    # Loop through each file in the (current) directory
-    for filename in os.listdir('.'):
-        # Ignore directories, just process files
-        if os.path.isdir(filename):
-            continue
-
-        new_name = get_fixed_filename(filename)
-        print(f"Renaming {filename} to {new_name}")
-        os.rename(filename, new_name)
+        for filename in filenames:
+            starting_name = os.path.join(directory_name, filename)
+            new_name = os.path.join(directory_name, get_fixed_filename(filename))
+            print(f"Renaming {starting_name} to {new_name}")
+            os.rename(starting_name, new_name)
 
 
 def get_fixed_filename(filename):
     """Return a 'fixed' version of filename."""
-    new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
+    # for i, letter in enumerate(filename):
+    #     print(i, letter)
+    replace_letters = filename.replace(" ", "_").replace(".TXT", ".txt")
+    join_letters = "".join(" " + letter if letter.isupper() else letter for letter in replace_letters).title()
+    further_replace_letters = join_letters.replace(" ", "_").replace("__", "_").replace(".Txt", ".txt").replace("(_", "(")
+    if further_replace_letters[:1] == "_":
+        new_name = further_replace_letters[1:]
+    else:
+        new_name = further_replace_letters
     return new_name
 
 
