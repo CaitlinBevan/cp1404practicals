@@ -76,8 +76,8 @@ def format_a_phrase(phrase):
     """
     Format a phrase as a sentence.
     Starting with a capital and ending with a full stop.
-     >>> format_a_phrase('hello')
-     'Hello.'
+    >>> format_a_phrase('hello')
+    'Hello.'
     >>> format_a_phrase('It is an ex parrot.' )
     'It is an ex parrot.'
     >>> format_a_phrase('This is a test phrase.')

@@ -10,6 +10,7 @@ def main():
     prompt = input("Enter a page title or search phrase: ")
     while prompt != "":
         try:
+            # page_title = wikipedia.page(prompt, auto_suggest=False)
             page_title = wikipedia.page(prompt)
             print(page_title.title)
             print(wikipedia.summary(prompt))
