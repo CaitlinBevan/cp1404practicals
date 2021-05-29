@@ -1,7 +1,12 @@
+"""
+CP1404/CP5632 Practical 10 - Wiki
+"""
+
 import wikipedia
 
 
 def main():
+    """Program to search Wikipedia."""
     prompt = input("Enter a page title or search phrase: ")
     while prompt != "":
         try:
